@@ -1,9 +1,9 @@
 //连接DB
-var businessDB = require("../db/businessDB");
-var codes = require("./errorCode");
+var businessDB = require("../../db/businessDB");
+var codes = require("../errorCode");
 
 /**注册*/
-exports.register = function (name,password,callback) {
+exports.register = function register(name,password,callback) {
     if(!name){
         callback(codes.NAME_ILLEGAL);
         return;
@@ -51,7 +51,7 @@ exports.login = function (name, password, callback) {
         return;
     }
 
-    businessDB.queryUser(name, password, function (err, result) {
+    businessDB.queryUserByNamePassword(name, password, function (err, result) {
         if(err){
             callback(codes.DB_ERROR);
         }

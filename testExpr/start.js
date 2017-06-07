@@ -5,8 +5,9 @@ var app = express();
 app.use(express.static(__dirname  + "/public"));
 //设置路由
 var routes = require("./routes/route")(app);
-//启动游戏模块
-var game = require("./game/gameServer");
+//启动游戏服
+var loginServer = require("./game/login/loginServer");
+
 //启动socket
 var wss = require("./socket/websocket");
 

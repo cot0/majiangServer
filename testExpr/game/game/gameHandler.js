@@ -1,0 +1,23 @@
+var server = require("./gameServer");
+var wss = require("../../socket/websocket");
+var commands = require("../../socket/commands");
+
+exports.handMsg = function (ws, data) {
+    var command = data.command;
+    switch (command){
+        case commands.MATCH_PLAYER:
+            matchPlayer(ws, data);
+            break;
+    }
+}
+
+function matchPlayer(ws, data) {
+    server.matchPlayer(data.content.name, data.sequence, function (err, sqs, players) {
+        if(err){
+        }
+        else{
+            var respTxt = JSON.stringify({command:commands.MATCH_PLAYER, code:0, sequence:sqs, content:{players:players}});
+            wss.sendMsg(ws, respTxt);
+        }
+    });
+}

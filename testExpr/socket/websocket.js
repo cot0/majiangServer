@@ -3,13 +3,8 @@ var wss = new WebSocketServer({ port: 8181 });
 var WsPool = require("./wsPool");
 var clients = new WsPool();
 var indexs = [];
-var commands = require("./commands");
-var loginServer = require("../game/loginServer");
-var gameServer = require("../game/gameServer");
+var msgHandler = require("./msgHandler");
 
-Buffer.prototype.toByteArray = function () {
-    return Array.prototype.slice.call(this, 0);
-}
 
 wss.on('connection', function (ws) {
     someoneConnected(ws);
@@ -18,7 +13,6 @@ wss.on('connection', function (ws) {
 /**当一个客户连接上socket*/
 function someoneConnected(ws) {
     addWs(ws);
-    sendMsg(ws, JSON.stringify({command:commands.SYSTEM_MSG, content:{msg:"我知道你连上了"}}));
 
     ws.on('message', function (message) {
         onMessage(ws, message);
@@ -51,49 +45,26 @@ function removeWs(i) {
  * */
 function onMessage(ws, msg) {
     console.log("客户 "+ws.clientid+" 发消息了 "+msg);
-    var data = JSON.parse(msg);
-    var command = data.command;
-    var sqs = data.sequence;
-    switch (command){
-        case commands.REGISTER:
-            loginServer.register(data.content.name, data.content.password, function (errcode, result) {
-                if(errcode){
-                    console.log("注册错误 "+errcode);
-                    var respTxt = JSON.stringify({command:commands.REGISTER, code:errcode, sequence:sqs});
-                    sendMsg(ws, respTxt);
-                }
-                else{
-                    //注册成功
-                    var respTxt = JSON.stringify({command:commands.REGISTER, code:0, sequence:sqs});
-                    sendMsg(ws, respTxt);
-                }
-            });
-            break;
-        case commands.LOGIN:
-            loginServer.login(data.content.name, data.content.password, function (errcode, result) {
-                if(errcode){
-                    console.log("登录错误 "+errcode);
-                    var respTxt = JSON.stringify({command:commands.LOGIN, code:errcode, sequence:sqs});
-                    sendMsg(ws, respTxt);
-                }
-                else{
-                    if(result){
-                        var respTxt = JSON.stringify({command:commands.LOGIN, code:0, sequence:sqs});
-                        sendMsg(ws, respTxt);
-                    }
-                }
-            })
-            break;
+    try {
+        var data = JSON.parse(msg);
     }
-
+    catch (e){
+        console.log("消息格式错误 "+e);
+    }
+    var command = data.command;
+    msgHandler.dispatch(command, ws, data);
 }
+
+
+
 /**向一个客户发送消息*/
-function sendMsg(ws, msg) {
+exports.sendMsg = function (ws, msg) {
+    console.log("向一个客户发出消息 "+msg);
     ws.send(msg);
 }
-
 /**向所有客户发送消息*/
-function sendAll(msg) {
+exports.sendAll = function (msg) {
+    console.log("向所有客户发出消息 "+msg);
     var all = clients.getValues();
     for(var i=0; i<all.length; i++){
         all(i).send(msg);
