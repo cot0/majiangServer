@@ -19,13 +19,13 @@ function handleRegister(ws, data) {
     server.register(data.content.name, data.content.password, function (errcode, result) {
         if(errcode){
             console.log("注册错误 "+errcode);
-            var respTxt = JSON.stringify({command:commands.REGISTER, code:errcode, sequence:sqs});
-            wss.sendMsg(ws, respTxt);
+            var resp = {command:commands.REGISTER, code:errcode, sequence:sqs};
+            wss.sendMsg(ws, resp);
         }
         else{
             //注册成功
-            var respTxt = JSON.stringify({command:commands.REGISTER, code:0, sequence:sqs});
-            wss.sendMsg(ws, respTxt);
+            var resp = {command:commands.REGISTER, code:0, sequence:sqs};
+            wss.sendMsg(ws, resp);
         }
     });
 }
@@ -34,13 +34,13 @@ function handleLogin(ws, data) {
     server.login(data.content.name, data.content.password, function (errcode, result) {
         if(errcode){
             console.log("登录错误 "+errcode);
-            var respTxt = JSON.stringify({command:commands.LOGIN, code:errcode, sequence:sqs});
-            wss.sendMsg(ws, respTxt);
+            var resp = {command:commands.LOGIN, code:errcode, sequence:sqs};
+            wss.sendMsg(ws, resp);
         }
         else{
             if(result){
-                var respTxt = JSON.stringify({command:commands.LOGIN, code:0, sequence:sqs, content:{name:data.content.name}});
-                wss.sendMsg(ws, respTxt);
+                var resp = {command:commands.LOGIN, code:0, sequence:sqs, content:{name:data.content.name}};
+                wss.sendMsg(ws, resp);
             }
         }
     })

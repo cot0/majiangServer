@@ -58,7 +58,8 @@ function onMessage(ws, msg) {
 
 
 /**向一个客户发送消息*/
-exports.sendMsg = function (ws, msg) {
+exports.sendMsg = function (ws, data) {
+    var msg = JSON.stringify(data);
     console.log("向一个客户发出消息 "+msg);
     ws.send(msg);
 }

@@ -12,12 +12,12 @@ exports.handMsg = function (ws, data) {
 }
 
 function matchPlayer(ws, data) {
-    server.matchPlayer(data.content.name, data.sequence, function (err, sqs, players) {
+    server.matchPlayer(ws, data.content.name, data.sequence, function (err, sqs, players) {
         if(err){
         }
         else{
-            var respTxt = JSON.stringify({command:commands.MATCH_PLAYER, code:0, sequence:sqs, content:{players:players}});
-            wss.sendMsg(ws, respTxt);
+            var resp = {command:commands.MATCH_PLAYER, code:0, sequence:sqs, content:{players:players}};
+            wss.sendMsg(ws, resp);
         }
     });
 }

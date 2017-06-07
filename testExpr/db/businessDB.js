@@ -29,6 +29,7 @@ exports.queryUserByNamePassword = function (name, password, callback) {
     return db.searchData("users", {name:name, password:password}, callback);
 }
 
+//批量查询用户
 exports.queryUsersByNames = function (names, callback) {
     if(names.length > 0){
         db.searchData("users", {name: {$in:names}}, function (err, result) {
