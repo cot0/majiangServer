@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be1b5cd2-174e-4101-aadf-10484d95af05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testExpr/game/game/cardUtil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testExpr/game/game/roomServer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/db/businessDB.js" afterPath="$PROJECT_DIR$/testExpr/db/businessDB.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/game/gameHandler.js" afterPath="$PROJECT_DIR$/testExpr/game/game/gameHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/game/gameServer.js" afterPath="$PROJECT_DIR$/testExpr/game/game/gameServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/login/loginHandler.js" afterPath="$PROJECT_DIR$/testExpr/game/login/loginHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/socket/commands.js" afterPath="$PROJECT_DIR$/testExpr/socket/commands.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/socket/msgHandler.js" afterPath="$PROJECT_DIR$/testExpr/socket/msgHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/socket/websocket.js" afterPath="$PROJECT_DIR$/testExpr/socket/websocket.js" />
     </list>
     <ignored path="express-mongodb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -405,12 +396,12 @@
       <updated>1496712054554</updated>
       <workItem from="1496712056627" duration="3262000" />
       <workItem from="1496722517724" duration="16060000" />
-      <workItem from="1496807388940" duration="18032000" />
+      <workItem from="1496807388940" duration="19055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37354000" />
+    <option name="totallyTimeSpent" value="38377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="51" width="1818" height="990" extended-state="0" />
