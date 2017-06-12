@@ -8,6 +8,9 @@ exports.handMsg = function (ws, data) {
         case commands.MATCH_PLAYER:
             matchPlayer(ws, data);
             break;
+        case commands.PLAY_GAME:
+            playGame(ws, data);
+            break;
     }
 }
 
@@ -18,6 +21,17 @@ function matchPlayer(ws, data) {
         else{
             var resp = {command:commands.MATCH_PLAYER, code:0, sequence:sqs, content:{players:players}};
             wss.sendMsg(ws, resp);
+        }
+    });
+}
+
+function playGame(ws, data) {
+    server.playgame(ws, data, function (err, result) {
+        if(err){
+
+        }
+        else{
+
         }
     });
 }

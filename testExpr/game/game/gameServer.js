@@ -6,8 +6,20 @@ var RoomServer = require("./roomServer");
 //匹配队列
 var queue = [];
 //当前的房间些
-var rooms = [];
+var rooms = {};
 
+/**房间内的玩家发送玩游戏的请求*/
+exports.playgame = function (ws, data) {
+    var roomId = data.content.roomId;
+    var index = data.content.index;
+    var room = rooms[roomId];
+    if(room){
+        console.log("房间"+roomId+"的玩家"+index+"发出游戏请求 "+JSON.stringify(data));
+        room.haddlePlayerQuest(index,data);
+    }
+}
+
+/**匹配玩家*/
 exports.matchPlayer = function (ws, name, sqs, callback) {
     //要筛选已经在排队的人
     for(var i=0; i<queue.length; i++){
@@ -44,6 +56,7 @@ exports.matchPlayer = function (ws, name, sqs, callback) {
                     serverPlayers.push({ws:newArr[j].ws,  name: result[j].name});
                 }
                 var room = new RoomServer();
+                rooms[room.roomId] = room;
                 room.setPlayers(serverPlayers);
                 room.initGame();
             }
