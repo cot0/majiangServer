@@ -26,12 +26,5 @@ function matchPlayer(ws, data) {
 }
 
 function playGame(ws, data) {
-    server.playgame(ws, data, function (err, result) {
-        if(err){
-
-        }
-        else{
-
-        }
-    });
+    server.playgame(ws, data);
 }

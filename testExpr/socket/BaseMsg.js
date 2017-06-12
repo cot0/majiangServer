@@ -28,7 +28,14 @@
  *          //定缺
  *          lackCard:"wan"/"tiao"/"tong",
  *          //出牌,碰牌（告知当前该第index个玩家操作了）
- *          index:number
+ *          index:number,
+ *          gangAble:false,
+ *          huAble:false,
+ *          pengAble:false,
+ *          //玩家操作
+ *          action: hu/gang/peng/guo/play,
+ *          //玩家出牌的牌号
+ *          card:number
  *      }
  *
  * }

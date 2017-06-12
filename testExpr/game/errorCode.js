@@ -3,7 +3,8 @@ var codes = {
     NAME_EXIST:2,
     NAME_ILLEGAL:3,
     PSW_ILLEGAL:4,
-    NAME_OR_PSW_NOT_EXIST:5
+    NAME_OR_PSW_NOT_EXIST:5,
+    PLAY_ERROR:6
 }
 
 module.exports = codes;

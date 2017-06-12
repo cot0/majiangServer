@@ -10,6 +10,7 @@ var rooms = {};
 
 /**房间内的玩家发送玩游戏的请求*/
 exports.playgame = function (ws, data) {
+    console.log("收到玩游戏的消息 "+JSON.stringify(data));
     var roomId = data.content.roomId;
     var index = data.content.index;
     var room = rooms[roomId];

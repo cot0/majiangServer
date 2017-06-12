@@ -13,13 +13,49 @@ exports.getNewCards108 = function () {
     }
     return newArr;
 }
-
-/**是否胡牌 0表示未胡，返回大于0表示番数
- *
- * x*aaa + y*bcd + z*eeee + ff 胡牌
- *
+/**是否可以杠 同步*/
+exports.getCardGangAble = function (cards) {
+    var dic = {};
+    for(var i=0; i<cards.length; i++) {
+        var value = getCardNum(cards[i]);
+        if(!dic[value]){
+            dic[value]=0;
+        }
+        dic[value] ++;
+    }
+    for(var value in dic){
+        if(dic[value] == 4){
+            return true;
+        }
+    }
+    return false;
+}
+/**是否可以杠指定的牌 用于检测杠他人出的牌 同步*/
+exports.getCardGangAbleByCard = function (cards, card) {
+    var v = getCardNum(card);
+    var num = 0;
+    for(var i=0; i<cards.length; i++) {
+        if(v == getCardNum(cards[i]) ){
+            num ++ ;
+        }
+    }
+    return num == 3;
+}
+/**是否可以碰指定的牌 用于检测是否可以碰他人出的牌 同步*/
+exports.getCardPengAbleByCard = function (cards, card) {
+    var v = getCardNum(card);
+    var num = 0;
+    for(var i=0; i<cards.length; i++) {
+        if(v == getCardNum(cards[i]) ){
+            num ++ ;
+        }
+    }
+    return num >= 2;
+}
+/**
+ * 是否可以胡牌 0表示未胡，返回大于0表示番数 同步
  * */
-exports.getCardHu = function (cards, callback) {
+exports.getCardHuAble = function (cards) {
     var wan = [];
     var tiao = [];
     var tong = [];
@@ -42,24 +78,21 @@ exports.getCardHu = function (cards, callback) {
 
     if(wan.length>0 && tiao.length>0 && tong.length>0){
         //还未打缺
-        callback(false);
+        return false;
     }
 
-    checkPair(cards, callback);
+    return checkPair(cards);
 }
-/**11122233355 13 14 15*/
-var testArr = [0,0,0,4,4,4,8,8,8,16,19, 50,55,57];
-checkPair(testArr, function (b) {
-    console.log("是否胡牌 "+b);
-});
-
+/**测试胡牌 11122233355 13 14 15*/
+// var testArr = [0,0,0,4,4,4,8,8,8,16,19, 50,55,57];
+// console.log("是否胡牌 "+checkPair(testArr));
 /**是否有对子 传入的数据是未计算成点数的牌下标*/
-function checkPair(cards, callback) {
+function checkPair(cards) {
     console.log("checkPair "+cards);
     //以点数做key，这个点数的牌的数量做value
     var values = {};
     for(var i=0; i<cards.length; i++){
-        var value = Math.floor(cards[i]/4+1);
+        var value = getCardNum(cards[i]);
         if(!values[value]){
             values[value] = 0;
         }
@@ -86,21 +119,18 @@ function checkPair(cards, callback) {
 
             //发现胡牌就return;
             if(isHu){
-                callback(true);
-                return;
+                return true;
             }
         }
     }
 
     if(!havePair){
-        callback(false);
+        return false;
     }
     if(!isHu){
-        callback(false);
+        return false;
     }
 }
-
-
 /**区分花色 key点数 value数量*/
 function checkValues(values) {
     var wan = [];
@@ -210,9 +240,7 @@ function checkOneFlower(arr) {
 }
 /**将牌的序列号转为牌的点数*/
 function getCardNum(value) {
-    value = value%36;
-    value = Math.floor(value/4+1);
-    return value;
+    return Math.floor(value/4+1);
 }
 
 /**

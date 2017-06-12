@@ -10,6 +10,7 @@ function addEvents() {
     addEvent(commands.REGISTER, loginHandler);
     addEvent(commands.LOGIN, loginHandler);
     addEvent(commands.MATCH_PLAYER, gameHandler);
+    addEvent(commands.PLAY_GAME, gameHandler);
 }
 function addEvent(command, handler) {
     emitter.on(command, function (ws, data) {
