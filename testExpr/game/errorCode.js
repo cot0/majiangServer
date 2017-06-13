@@ -4,7 +4,8 @@ var codes = {
     NAME_ILLEGAL:3,
     PSW_ILLEGAL:4,
     NAME_OR_PSW_NOT_EXIST:5,
-    PLAY_ERROR:6
+    PLAY_ERROR:6,
+    PLAY_LOGINED:7
 }
 
 module.exports = codes;

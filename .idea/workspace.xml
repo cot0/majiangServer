@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be1b5cd2-174e-4101-aadf-10484d95af05" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/errorCode.js" afterPath="$PROJECT_DIR$/testExpr/game/errorCode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/game/cardUtil.js" afterPath="$PROJECT_DIR$/testExpr/game/game/cardUtil.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/game/gameHandler.js" afterPath="$PROJECT_DIR$/testExpr/game/game/gameHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/game/gameServer.js" afterPath="$PROJECT_DIR$/testExpr/game/game/gameServer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/game/roomServer.js" afterPath="$PROJECT_DIR$/testExpr/game/game/roomServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/socket/BaseMsg.js" afterPath="$PROJECT_DIR$/testExpr/socket/BaseMsg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/socket/msgHandler.js" afterPath="$PROJECT_DIR$/testExpr/socket/msgHandler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testExpr/game/login/loginServer.js" afterPath="$PROJECT_DIR$/testExpr/game/login/loginServer.js" />
     </list>
     <ignored path="express-mongodb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +31,8 @@
       <file leaf-file-name="gameServer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testExpr/game/game/gameServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
+            <state relative-caret-position="396">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -64,8 +61,8 @@
       <file leaf-file-name="loginServer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testExpr/game/login/loginServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="12" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="542">
+              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -74,8 +71,8 @@
       <file leaf-file-name="roomServer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testExpr/game/game/roomServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="138" column="184" selection-start-line="138" selection-start-column="176" selection-end-line="138" selection-end-column="184" />
+            <state relative-caret-position="586">
+              <caret line="140" column="201" selection-start-line="140" selection-start-column="192" selection-end-line="140" selection-end-column="201" />
               <folding />
             </state>
           </provider>
@@ -84,8 +81,8 @@
       <file leaf-file-name="errorCode.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testExpr/game/errorCode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="242">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,7 +91,7 @@
       <file leaf-file-name="loginHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testExpr/game/login/loginHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
+            <state relative-caret-position="806">
               <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
               <folding />
             </state>
@@ -104,7 +101,7 @@
       <file leaf-file-name="BaseMsg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testExpr/socket/BaseMsg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
+            <state relative-caret-position="550">
               <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
@@ -152,7 +149,6 @@
         <option value="$PROJECT_DIR$/testExpr/db/db.js" />
         <option value="$PROJECT_DIR$/testExpr/game/Error.js" />
         <option value="$PROJECT_DIR$/testExpr/game/loginServer.js" />
-        <option value="$PROJECT_DIR$/testExpr/game/login/loginServer.js" />
         <option value="$PROJECT_DIR$/testExpr/start.js" />
         <option value="$PROJECT_DIR$/testExpr/db/businessDB.js" />
         <option value="$PROJECT_DIR$/testExpr/socket/websocket.js" />
@@ -160,11 +156,12 @@
         <option value="$PROJECT_DIR$/testExpr/socket/commands.js" />
         <option value="$PROJECT_DIR$/testExpr/socket/BaseMsg.js" />
         <option value="$PROJECT_DIR$/testExpr/game/game/cardUtil.js" />
-        <option value="$PROJECT_DIR$/testExpr/game/errorCode.js" />
         <option value="$PROJECT_DIR$/testExpr/game/game/gameHandler.js" />
         <option value="$PROJECT_DIR$/testExpr/game/game/gameServer.js" />
-        <option value="$PROJECT_DIR$/testExpr/game/game/roomServer.js" />
         <option value="$PROJECT_DIR$/testExpr/socket/msgHandler.js" />
+        <option value="$PROJECT_DIR$/testExpr/game/errorCode.js" />
+        <option value="$PROJECT_DIR$/testExpr/game/login/loginServer.js" />
+        <option value="$PROJECT_DIR$/testExpr/game/game/roomServer.js" />
       </list>
     </option>
   </component>
@@ -419,14 +416,17 @@
       <workItem from="1496884535090" duration="621000" />
       <workItem from="1497230723030" duration="11907000" />
       <workItem from="1497250683967" duration="14408000" />
+      <workItem from="1497317258723" duration="795000" />
+      <workItem from="1497343318723" duration="484000" />
+      <workItem from="1497344016962" duration="5157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65677000" />
+    <option name="totallyTimeSpent" value="72113000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="10" width="1818" height="990" extended-state="1" />
+    <frame x="37" y="10" width="1818" height="990" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24972253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -499,68 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3586">
           <caret line="163" column="19" selection-start-line="163" selection-start-column="19" selection-end-line="163" selection-end-column="19" />
-          <folding>
-            <element signature="e#55#313#0" expanded="false" />
-            <element signature="e#103#131#0" expanded="false" />
-            <element signature="e#179#292#0" expanded="false" />
-            <element signature="e#371#679#0" expanded="false" />
-            <element signature="e#429#562#0" expanded="false" />
-            <element signature="e#496#533#0" expanded="false" />
-            <element signature="e#588#659#0" expanded="false" />
-            <element signature="e#617#653#0" expanded="false" />
-            <element signature="e#764#952#0" expanded="false" />
-            <element signature="e#851#929#0" expanded="false" />
-            <element signature="e#891#923#0" expanded="false" />
-            <element signature="e#1041#1229#0" expanded="false" />
-            <element signature="e#1128#1206#0" expanded="false" />
-            <element signature="e#1168#1200#0" expanded="false" />
-            <element signature="e#1310#1790#0" expanded="false" />
-            <element signature="e#1406#1658#0" expanded="false" />
-            <element signature="e#1496#1534#0" expanded="false" />
-            <element signature="e#1561#1600#0" expanded="false" />
-            <element signature="e#1613#1652#0" expanded="false" />
-            <element signature="e#1714#1758#0" expanded="false" />
-            <element signature="e#1822#1875#0" expanded="false" />
-            <element signature="n#!!block;n#checkPair#0" expanded="false" />
-            <element signature="e#2101#2245#0" expanded="false" />
-            <element signature="e#2171#2213#0" expanded="false" />
-            <element signature="e#2321#2895#0" expanded="false" />
-            <element signature="e#2351#2889#0" expanded="false" />
-            <element signature="e#2454#2683#0" expanded="false" />
-            <element signature="e#2490#2568#0" expanded="false" />
-            <element signature="e#2589#2669#0" expanded="false" />
-            <element signature="e#2835#2879#0" expanded="false" />
-            <element signature="e#2914#2943#0" expanded="false" />
-            <element signature="e#2957#2986#0" expanded="false" />
-            <element signature="n#!!block;n#checkValues#0" expanded="false" />
-            <element signature="e#3149#3533#0" expanded="false" />
-            <element signature="e#3201#3527#0" expanded="false" />
-            <element signature="e#3239#3517#0" expanded="false" />
-            <element signature="e#3271#3327#0" expanded="false" />
-            <element signature="e#3364#3423#0" expanded="false" />
-            <element signature="e#3444#3503#0" expanded="false" />
-            <element signature="e#3749#3817#0" expanded="false" />
-            <element signature="e#3826#3870#0" expanded="false" />
-            <element signature="n#!!block;n#checkOneFlower#0" expanded="false" />
-            <element signature="e#4015#4249#0" expanded="false" />
-            <element signature="e#4078#4223#0" expanded="false" />
-            <element signature="e#4139#4186#0" expanded="false" />
-            <element signature="e#4284#4554#0" expanded="false" />
-            <element signature="e#4337#4528#0" expanded="false" />
-            <element signature="e#4396#4518#0" expanded="false" />
-            <element signature="e#4438#4504#0" expanded="false" />
-            <element signature="e#4593#4859#0" expanded="false" />
-            <element signature="e#4658#4776#0" expanded="false" />
-            <element signature="e#4718#4766#0" expanded="false" />
-            <element signature="e#4897#5427#0" expanded="false" />
-            <element signature="e#4958#5282#0" expanded="false" />
-            <element signature="e#5045#5272#0" expanded="false" />
-            <element signature="e#5302#5350#0" expanded="false" />
-            <element signature="e#5363#5421#0" expanded="false" />
-            <element signature="e#5538#5566#0" expanded="false" />
-            <element signature="e#5575#5604#0" expanded="false" />
-            <element signature="n#!!block;n#getCardNum#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,14 +727,6 @@
       </provider>
     </entry>
     <entry file="file://D:/majiang/Majiang/bin-debug/client/RoomUI.js" />
-    <entry file="file://$PROJECT_DIR$/testExpr/game/login/loginServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testExpr/socket/wsPool.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -816,92 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-          <folding>
-            <element signature="e#55#313#0" expanded="false" />
-            <element signature="e#103#131#0" expanded="false" />
-            <element signature="e#179#292#0" expanded="false" />
-            <element signature="e#371#679#0" expanded="false" />
-            <element signature="e#429#562#0" expanded="false" />
-            <element signature="e#496#533#0" expanded="false" />
-            <element signature="e#588#659#0" expanded="false" />
-            <element signature="e#617#653#0" expanded="false" />
-            <element signature="e#764#952#0" expanded="false" />
-            <element signature="e#851#929#0" expanded="false" />
-            <element signature="e#891#923#0" expanded="false" />
-            <element signature="e#1041#1229#0" expanded="false" />
-            <element signature="e#1128#1206#0" expanded="false" />
-            <element signature="e#1168#1200#0" expanded="false" />
-            <element signature="e#1310#1790#0" expanded="false" />
-            <element signature="e#1406#1658#0" expanded="false" />
-            <element signature="e#1496#1534#0" expanded="false" />
-            <element signature="e#1561#1600#0" expanded="false" />
-            <element signature="e#1613#1652#0" expanded="false" />
-            <element signature="e#1714#1758#0" expanded="false" />
-            <element signature="e#1822#1875#0" expanded="false" />
-            <element signature="n#!!block;n#checkPair#0" expanded="false" />
-            <element signature="e#2101#2245#0" expanded="false" />
-            <element signature="e#2171#2213#0" expanded="false" />
-            <element signature="e#2321#2895#0" expanded="false" />
-            <element signature="e#2351#2889#0" expanded="false" />
-            <element signature="e#2454#2683#0" expanded="false" />
-            <element signature="e#2490#2568#0" expanded="false" />
-            <element signature="e#2589#2669#0" expanded="false" />
-            <element signature="e#2835#2879#0" expanded="false" />
-            <element signature="e#2914#2943#0" expanded="false" />
-            <element signature="e#2957#2986#0" expanded="false" />
-            <element signature="n#!!block;n#checkValues#0" expanded="false" />
-            <element signature="e#3149#3533#0" expanded="false" />
-            <element signature="e#3201#3527#0" expanded="false" />
-            <element signature="e#3239#3517#0" expanded="false" />
-            <element signature="e#3271#3327#0" expanded="false" />
-            <element signature="e#3364#3423#0" expanded="false" />
-            <element signature="e#3444#3503#0" expanded="false" />
-            <element signature="e#3749#3817#0" expanded="false" />
-            <element signature="e#3826#3870#0" expanded="false" />
-            <element signature="n#!!block;n#checkOneFlower#0" expanded="false" />
-            <element signature="e#4015#4249#0" expanded="false" />
-            <element signature="e#4078#4223#0" expanded="false" />
-            <element signature="e#4139#4186#0" expanded="false" />
-            <element signature="e#4284#4554#0" expanded="false" />
-            <element signature="e#4337#4528#0" expanded="false" />
-            <element signature="e#4396#4518#0" expanded="false" />
-            <element signature="e#4438#4504#0" expanded="false" />
-            <element signature="e#4593#4859#0" expanded="false" />
-            <element signature="e#4658#4776#0" expanded="false" />
-            <element signature="e#4718#4766#0" expanded="false" />
-            <element signature="e#4897#5427#0" expanded="false" />
-            <element signature="e#4958#5282#0" expanded="false" />
-            <element signature="e#5045#5272#0" expanded="false" />
-            <element signature="e#5302#5350#0" expanded="false" />
-            <element signature="e#5363#5421#0" expanded="false" />
-            <element signature="e#5538#5566#0" expanded="false" />
-            <element signature="e#5575#5604#0" expanded="false" />
-            <element signature="n#!!block;n#getCardNum#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testExpr/game/errorCode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testExpr/game/login/loginHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testExpr/game/game/gameHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +759,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testExpr/socket/BaseMsg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
+        <state relative-caret-position="550">
           <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
           <folding />
         </state>
@@ -929,18 +773,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testExpr/game/game/gameHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testExpr/game/login/loginHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testExpr/game/game/gameServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
+        <state relative-caret-position="396">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testExpr/game/errorCode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testExpr/game/login/loginServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testExpr/game/game/roomServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="138" column="184" selection-start-line="138" selection-start-column="176" selection-end-line="138" selection-end-column="184" />
+        <state relative-caret-position="586">
+          <caret line="140" column="201" selection-start-line="140" selection-start-column="192" selection-end-line="140" selection-end-column="201" />
           <folding />
         </state>
       </provider>

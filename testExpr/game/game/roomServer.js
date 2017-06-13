@@ -102,13 +102,14 @@ p.initDealCard = function (i,num,delay, callback) {
 }
 /**向某个玩家发牌*/
 p.dealCard = function (i, arr) {
+    this.changeState(this.STATE_DEALCARD);
     this["cards"+i] = this["cards"+i].concat(arr);
     this.sendToOneRoomPlayer(i, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,addCards:arr, leftCardsNum:this.leftCards.length}});
     //发一个人的牌时要告知另外三个人，这个人的牌数变了
-    if(i != 0)this.sendToOneRoomPlayer(0, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{i:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
-    if(i != 1)this.sendToOneRoomPlayer(1, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{i:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
-    if(i != 2)this.sendToOneRoomPlayer(2, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{i:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
-    if(i != 3)this.sendToOneRoomPlayer(3, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{i:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
+    if(i != 0)this.sendToOneRoomPlayer(0, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{index:i,num:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
+    if(i != 1)this.sendToOneRoomPlayer(1, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{index:i,num:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
+    if(i != 2)this.sendToOneRoomPlayer(2, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{index:i,num:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
+    if(i != 3)this.sendToOneRoomPlayer(3, {command:commands.PLAY_GAME, content:{roomId:this.roomId, state:this.playCommand_sendCard,otherCardNum:{index:i,num:this["cards"+i].length}, leftCardsNum:this.leftCards.length}});
 }
 
 /**改变房间状态*/
@@ -135,10 +136,11 @@ p.changeState = function (n,ispeng) {
                 gangAble = false;
                 huAble = false;
             }
+            console.log("告知玩家"+this.curPlayIndex+",他可以出牌了");
             //告知当前玩家，他可以出牌，他是否可以胡 杠
-            this.sendToOneRoomPlayer(this.curPlayIndex, {command:commands.PLAY_GAME, content:{state:this.playCommand_playCard, gangAble:gangAble, huAble:huAble, pengAble:false,playAble:true}});
+            this.sendToOneRoomPlayer(this.curPlayIndex, {command:commands.PLAY_GAME, content:{state:this.playCommand_playCard, gangAble:gangAble, huAble:huAble, pengAble:false, playAble:true, playIndex:this.curPlayIndex}});
             //告知另外三个玩家，当前不能出牌
-            this.sendToOtherRoomPlayer(this.curPlayIndex,{command:commands.PLAY_GAME, content:{state:this.playCommand_playCard, gangAble:false, huAble:false, pengAble:false,playAble:false}});
+            this.sendToOtherRoomPlayer(this.curPlayIndex,{command:commands.PLAY_GAME, content:{state:this.playCommand_playCard, gangAble:false, huAble:false, pengAble:false, playAble:false, playIndex:this.curPlayIndex}});
             break;
         case this.STATE_PENGCARD:
             //等待其他玩家胡 杠 碰 过 然后下一位玩家才可以继续出牌
@@ -192,6 +194,7 @@ p.handlePlayerLackCard = function (index, lackCard, sqs) {
 }
 /**玩家要出牌*/
 p.handlePlayerPlarCard = function (index, card, sqs) {
+    console.log(index+"玩家出牌 "+card,this["cards"+index]);
     var i = this["cards"+index].indexOf(card)
     if(i >= 0){
         this["cards"+index].splice(i, 1);
@@ -236,8 +239,11 @@ p.handlePlayerPlarCard = function (index, card, sqs) {
 
         //没人可以操作这张牌，就轮到下一个人摸牌
         if(!needWait) {
+            console.log("没人可以操作这张牌，就轮到下一个人摸牌");
             this.addCurIndex();
+            console.log("发牌给"+this.curPlayIndex);
             this.dealCard(this.curPlayIndex, this.getCard(1));
+            console.log("改变状态机到出牌");
             this.changeState(this.STATE_PLAYCARD);
         }
 
