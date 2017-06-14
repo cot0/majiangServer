@@ -1,4 +1,4 @@
-var express = require("express");
+﻿var express = require("express");//1
 var app = express();
 
 //设置静态资源目录
